@@ -10,7 +10,7 @@ var World = {
     },
 
     createOccluder: function createOccluderFn() {
-        var occluderScale = 10;
+        var occluderScale = 0.00;
 
         this.firetruckOccluder = new AR.Occluder("assets/firetruck_occluder.wt3", {
             onLoaded: this.loadingStep,
@@ -32,30 +32,36 @@ var World = {
 
     createCones: function createConesFn() {
         var coneDistance = 1.0;
-        var frontLeftCone = World.getCone(0.05, 0.1, 0.0);//(-0.04, -0.012, -2.5);
-        World.drawables.push(frontLeftCone);
 
+//        var frontLeftCone = World.getCone(-coneDistance, 0.0, World.occluderCenterZ + coneDistance);
+//        World.drawables.push(frontLeftCone);
+//
+//        var backLeftCone = World.getCone( coneDistance, 0.0, World.occluderCenterZ + coneDistance);
+//        World.drawables.push(backLeftCone);
+
+        var backRightCone = World.getCone( 1.0, 0.0, World.occluderCenterZ);
+        World.drawables.push(backRightCone);
+
+//        var frontRightCone = World.getCone(-coneDistance, 0.0, World.occluderCenterZ - coneDistance);
+//        World.drawables.push(frontRightCone);
     },
 
     getCone: function getConeFn(positionX, positionY, positionZ) {
-        var coneScale = .06;
+        var coneScale = 0.01;
 
         return new AR.Model("assets/box5.wt3", {
             scale: {
-                x: .05,
-                y: .3,
-                z: .3
+                x: coneScale,
+                y: 0.03,
+                z: coneScale
             },
             translate: {
-//                x: -0.25,
-//                z: -0.3
                 x: positionX,
                 y: positionY,
                 z: positionZ
             },
-            rotate: {
-                x: 0,
-                y: 0
+            rotate: {   
+                x: 0
             }
         });
     },
