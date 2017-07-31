@@ -15,19 +15,19 @@ var World = {
         var sX = 1;
         var sY = 1;
         var sZ = 1;
-        if (queryString) {
-            queryString = queryString.split('#')[0];
-            var args = queryString.split('&');
-            tX = parseInt(args[0].split("=")[1]);
-            tY = parseInt(args[1].split("=")[1]);
-            tZ = parseInt(args[2].split("=")[1]);
-            rX = parseInt(args[3].split("=")[1]);
-            rY = parseInt(args[4].split("=")[1]);
-            rZ = parseInt(args[5].split("=")[1]);
-            sX = parseInt(args[6].split("=")[1]);
-            sY = parseInt(args[7].split("=")[1]);
-            sZ =parseInt(args[8].split("=")[1]);
-        }
+        // if (queryString) {
+        //     queryString = queryString.split('#')[0];
+        //     var args = queryString.split('&');
+        //     tX = parseInt(args[0].split("=")[1]);
+        //     tY = parseInt(args[1].split("=")[1]);
+        //     tZ = parseInt(args[2].split("=")[1]);
+        //     rX = parseInt(args[3].split("=")[1]);
+        //     rY = parseInt(args[4].split("=")[1]);
+        //     rZ = parseInt(args[5].split("=")[1]);
+        //     sX = parseInt(args[6].split("=")[1]);
+        //     sY = parseInt(args[7].split("=")[1]);
+        //     sZ = parseInt(args[8].split("=")[1]);
+        // }
         
         World.createOccluder();
         World.createCones();
