@@ -13,7 +13,8 @@ var World = {
     sZ: 1.0,
 
     init: function initFn() {
-        var urlString = Document.URL;
+        
+        var urlString = document.URL;
         var queryString = urlString ? urlString.split('?')[1] : window.location.search.slice(1);
         if (queryString) {
             queryString = queryString.split('#')[0];
@@ -143,7 +144,7 @@ var World = {
         if (World.firetruckOccluder.isLoaded()) {
             var cssDivLeft = " style='display: table-cell;vertical-align: middle; text-align: right; width: 50%; padding-right: 15px;'";
             var cssDivRight = " style='display: table-cell;vertical-align: middle; text-align: left;'";
-            var urlS = Document.URL;
+            var urlS = document.URL;
             document.getElementById('loadingMessage').innerHTML =
             "<div" + cssDivLeft + urlS
                 // "<div" + cssDivLeft + ">Position: " + World.tX.toString(); ", " + World.tY.toString(); ", " + World.tZ.toString(); + 
