@@ -147,7 +147,7 @@ var World = {
             var cssDivRight = " style='display: table-cell;vertical-align: middle; text-align: left;'";
             document.getElementById('loadingMessage').innerHTML =
             
-                "<div" + cssDivLeft + "URL: " + World.urlString
+                "<div" + cssDivLeft + "WHAT: " 
 
                 // ">Position: " + World.tX.toString(); ", " + World.tY.toString(); ", " + World.tZ.toString(); + 
                 // "<br>Rotation: " + World.rX.toString(); ", " + World.rY.toString(); ", " + World.rZ.toString(); + 
