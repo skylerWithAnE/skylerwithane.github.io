@@ -2,32 +2,34 @@ var World = {
     loaded: false,
     occluderCenterZ: -0.12,
     drawables: [],
+    tX: 0,
+    tY: 0,
+    tZ: 0,
+    rX: 0,
+    rY: 0,
+    rZ: 0,
+    sX: 0,
+    sY: 0,
+    sZ: 0,
+
+
 
     init: function initFn() {
         var urlString = Document.URL;
         var queryString = url ? url.split('?')[1] : window.location.search.slice(1);
-        var tX = 0;
-        var tY = 0;
-        var tZ = 0;
-        var rX = 0;
-        var rY = 0;
-        var rZ = 0;
-        var sX = 1;
-        var sY = 1;
-        var sZ = 1;
-        // if (queryString) {
-        //     queryString = queryString.split('#')[0];
-        //     var args = queryString.split('&');
-        //     tX = parseInt(args[0].split("=")[1]);
-        //     tY = parseInt(args[1].split("=")[1]);
-        //     tZ = parseInt(args[2].split("=")[1]);
-        //     rX = parseInt(args[3].split("=")[1]);
-        //     rY = parseInt(args[4].split("=")[1]);
-        //     rZ = parseInt(args[5].split("=")[1]);
-        //     sX = parseInt(args[6].split("=")[1]);
-        //     sY = parseInt(args[7].split("=")[1]);
-        //     sZ = parseInt(args[8].split("=")[1]);
-        // }
+        if (queryString) {
+            queryString = queryString.split('#')[0];
+            var args = queryString.split('&');
+            World.tX = parseInt(args[0].split("=")[1]);
+            World.tY = parseInt(args[1].split("=")[1]);
+            World.tZ = parseInt(args[2].split("=")[1]);
+            World.rX = parseInt(args[3].split("=")[1]);
+            World.rY = parseInt(args[4].split("=")[1]);
+            World.rZ = parseInt(args[5].split("=")[1]);
+            World.sX = parseInt(args[6].split("=")[1]);
+            World.sY = parseInt(args[7].split("=")[1]);
+            World.sZ = parseInt(args[8].split("=")[1]);
+        }
         
         World.createOccluder();
         World.createCones();
