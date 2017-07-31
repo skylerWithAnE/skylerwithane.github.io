@@ -6,9 +6,9 @@ var World = {
     init: function initFn() {
         var x = Document.URL;
         window.alert("x");
-        World.createOccluder();
-        World.createCones();
-        World.createTracker();
+        //World.createOccluder();
+        //World.createCones();
+        //World.createTracker();
     },
 
     createOccluder: function createOccluderFn() {
