@@ -4,6 +4,8 @@ var World = {
     drawables: [],
 
     init: function initFn() {
+        var x = Document.URL;
+        window.alert("x");
         World.createOccluder();
         World.createCones();
         World.createTracker();
@@ -116,7 +118,7 @@ var World = {
             var cssDivLeft = " style='display: table-cell;vertical-align: middle; text-align: right; width: 50%; padding-right: 15px;'";
             var cssDivRight = " style='display: table-cell;vertical-align: middle; text-align: left;'";
             document.getElementById('loadingMessage').innerHTML =
-                "<div" + cssDivLeft + ">Scan R2(web):</div>" +
+                "<div" + cssDivLeft + ">Scan R2(web: 2):</div>" +
                 "<div" + cssDivRight + "><img src='assets/r2_thumb.png'></img></div>";
         }
     }
