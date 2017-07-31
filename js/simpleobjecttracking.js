@@ -65,7 +65,7 @@ var World = {
 //        var backLeftCone = World.getCone( coneDistance, 0.0, World.occluderCenterZ + coneDistance);
 //        World.drawables.push(backLeftCone);
 
-        var backRightCone = World.getCone( tX, tY, tZ);
+        var backRightCone = World.getCone( World.tX, World.tY, World.tZ);
         World.drawables.push(backRightCone);
 
 //        var frontRightCone = World.getCone(-coneDistance, 0.0, World.occluderCenterZ - coneDistance);
@@ -77,9 +77,9 @@ var World = {
 
         return new AR.Model("assets/box5.wt3", {
             scale: {
-                x: sX,
-                y: sY,
-                z: sZ
+                x: World.sX,
+                y: World.sY,
+                z: World.sZ
             },
             translate: {
                 x: positionX,
@@ -87,9 +87,9 @@ var World = {
                 z: positionZ
             },
             rotate: {   
-                x: rX,
-                y: rY,
-                z: rZ
+                x: World.rX,
+                y: World.rY,
+                z: World.rZ
             }
         });
     },
