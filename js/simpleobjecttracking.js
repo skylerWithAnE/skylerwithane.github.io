@@ -2,15 +2,15 @@ var World = {
     loaded: false,
     occluderCenterZ: -0.12,
     drawables: [],
-    tX: 0,
-    tY: 0,
-    tZ: 0,
-    rX: 0,
-    rY: 0,
-    rZ: 0,
-    sX: 1,
-    sY: 1,
-    sZ: 1,
+    tX: 0.0,
+    tY: 0.0,
+    tZ: 0.0,
+    rX: 0.0,
+    rY: 0.0,
+    rZ: 0.0,
+    sX: 1.0,
+    sY: 1.0,
+    sZ: 1.0,
 
     init: function initFn() {
         var urlString = Document.URL;
@@ -18,15 +18,15 @@ var World = {
         if (queryString) {
             queryString = queryString.split('#')[0];
             var args = queryString.split('&');
-            World.tX = parseInt(args[0].split("=")[1]);
-            World.tY = parseInt(args[1].split("=")[1]);
-            World.tZ = parseInt(args[2].split("=")[1]);
-            World.rX = parseInt(args[3].split("=")[1]);
-            World.rY = parseInt(args[4].split("=")[1]);
-            World.rZ = parseInt(args[5].split("=")[1]);
-            World.sX = parseInt(args[6].split("=")[1]);
-            World.sY = parseInt(args[7].split("=")[1]);
-            World.sZ = parseInt(args[8].split("=")[1]);
+            World.tX = parseFloat(args[0].split("=")[1]);
+            World.tY = parseFloat(args[1].split("=")[1]);
+            World.tZ = parseFloat(args[2].split("=")[1]);
+            World.rX = parseFloat(args[3].split("=")[1]);
+            World.rY = parseFloat(args[4].split("=")[1]);
+            World.rZ = parseFloat(args[5].split("=")[1]);
+            World.sX = parseFloat(args[6].split("=")[1]);
+            World.sY = parseFloat(args[7].split("=")[1]);
+            World.sZ = parseFloat(args[8].split("=")[1]);
         }
         
         World.createOccluder();
