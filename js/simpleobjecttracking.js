@@ -4,10 +4,35 @@ var World = {
     drawables: [],
 
     init: function initFn() {
-        var x = Document.URL;
+        var urlString = Document.URL;
+        var queryString = url ? url.split('?')[1] : window.location.search.slice(1);
+        var tX = 0;
+        var tY = 0;
+        var tZ = 0;
+        var rX = 0;
+        var rY = 0;
+        var rZ = 0;
+        var sX = 1;
+        var sY = 1;
+        var sZ = 1;
+        if (queryString) {
+            queryString = queryString.split('#')[0];
+            var args = queryString.split('&');
+            tX = parseInt(args[0].split("=")[1]);
+            tY = parseInt(args[1].split("=")[1]);
+            tZ = parseInt(args[2].split("=")[1]);
+            rX = parseInt(args[3].split("=")[1]);
+            rY = parseInt(args[4].split("=")[1]);
+            rZ = parseInt(args[5].split("=")[1]);
+            sX = parseInt(args[6].split("=")[1]);
+            sY = parseInt(args[7].split("=")[1]);
+            sZ =parseInt(args[8].split("=")[1]);
+        }
+        
         World.createOccluder();
         World.createCones();
         World.createTracker();
+
     },
 
     createOccluder: function createOccluderFn() {
@@ -40,7 +65,7 @@ var World = {
 //        var backLeftCone = World.getCone( coneDistance, 0.0, World.occluderCenterZ + coneDistance);
 //        World.drawables.push(backLeftCone);
 
-        var backRightCone = World.getCone( 1.0, 0.0, World.occluderCenterZ);
+        var backRightCone = World.getCone( tX, tY, tZ);
         World.drawables.push(backRightCone);
 
 //        var frontRightCone = World.getCone(-coneDistance, 0.0, World.occluderCenterZ - coneDistance);
@@ -52,9 +77,9 @@ var World = {
 
         return new AR.Model("assets/box5.wt3", {
             scale: {
-                x: coneScale,
-                y: 0.03,
-                z: coneScale
+                x: sX,
+                y: sY,
+                z: sZ
             },
             translate: {
                 x: positionX,
@@ -62,7 +87,9 @@ var World = {
                 z: positionZ
             },
             rotate: {   
-                x: 0
+                x: rX,
+                y: rY,
+                z: rZ
             }
         });
     },
