@@ -5,7 +5,7 @@ var World = {
 
     init: function initFn() {
         var x = Document.URL;
-        window.alert("x");
+        console.log("x");
         //World.createOccluder();
         //World.createCones();
         //World.createTracker();
