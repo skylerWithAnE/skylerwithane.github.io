@@ -147,14 +147,13 @@ var World = {
             var cssDivRight = " style='display: table-cell;vertical-align: middle; text-align: left;'";
             document.getElementById('loadingMessage').innerHTML =
             
-                "<div" + cssDivLeft + "WHAT: " 
+                "<div" + cssDivLeft + "URL: " + World.urlString
 
                 // ">Position: " + World.tX.toString(); ", " + World.tY.toString(); ", " + World.tZ.toString(); + 
                 // "<br>Rotation: " + World.rX.toString(); ", " + World.rY.toString(); ", " + World.rZ.toString(); + 
                 // "<br>Scale: "+ World.tX.toString(); ", " + World.tY.toString(); ", " + World.tZ.toString(); 
-                // + "</div>" +
-
-                + "<div" + cssDivRight + "><img src='assets/r2_thumb.png'></img></div>";
+                
+                + "</div>" + "<div" + cssDivRight + "><img src='assets/r2_thumb.png'></img></div>";
 
                 
         }
