@@ -144,9 +144,11 @@ var World = {
             var cssDivLeft = " style='display: table-cell;vertical-align: middle; text-align: right; width: 50%; padding-right: 15px;'";
             var cssDivRight = " style='display: table-cell;vertical-align: middle; text-align: left;'";
             document.getElementById('loadingMessage').innerHTML =
-                "<div" + cssDivLeft + ">Position: " + World.tX.toString(); ", " + World.tY.toString(); ", " + World.tZ.toString(); + 
-                "<br>Rotation: " + World.rX.toString(); ", " + World.rY.toString(); ", " + World.rZ.toString(); + 
-                "<br>Scale: "+ World.tX.toString(); ", " + World.tY.toString(); ", " + World.tZ.toString(); + "</div>" +
+            "<div" + cssDivLeft + Document.URL
+                // "<div" + cssDivLeft + ">Position: " + World.tX.toString(); ", " + World.tY.toString(); ", " + World.tZ.toString(); + 
+                // "<br>Rotation: " + World.rX.toString(); ", " + World.rY.toString(); ", " + World.rZ.toString(); + 
+                // "<br>Scale: "+ World.tX.toString(); ", " + World.tY.toString(); ", " + World.tZ.toString(); 
+                + "</div>" +
                 "<div" + cssDivRight + "><img src='assets/r2_thumb.png'></img></div>";
         }
     }
