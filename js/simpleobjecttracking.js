@@ -8,15 +8,13 @@ var World = {
     rX: 0,
     rY: 0,
     rZ: 0,
-    sX: 0,
-    sY: 0,
-    sZ: 0,
-
-
+    sX: 1,
+    sY: 1,
+    sZ: 1,
 
     init: function initFn() {
         var urlString = Document.URL;
-        var queryString = url ? url.split('?')[1] : window.location.search.slice(1);
+        var queryString = urlString ? urlString.split('?')[1] : window.location.search.slice(1);
         if (queryString) {
             queryString = queryString.split('#')[0];
             var args = queryString.split('&');
